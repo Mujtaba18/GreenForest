@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Nav from "./components/Nav"
 import Parks from "./pages/Parks"
+import ParkGames from "./components/ParkGames"
 import "./App.css"
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" exact element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/parks" element={<Parks />} />
+          <Route path="/parks/games/:parkId" element={<ParkGames />} />
         </Routes>
       </main>
     </div>
