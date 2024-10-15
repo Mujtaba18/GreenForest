@@ -5,6 +5,7 @@ import axios from "axios"
 const ParkGames = () => {
   const { parkId } = useParams()
   const [games, setGames] = useState([])
+  const [parkName, setParkName] = useState("")
 
   useEffect(() => {
     const fetchParkGames = async () => {
@@ -12,8 +13,10 @@ const ParkGames = () => {
         const response = await axios.get(
           `http://localhost:3001/parks/games/${parkId}`
         )
-        setGames(response.data.games || []) // Assuming the response structure has a 'games' array
-        console.log("Park games:", response.data.games)
+        // get park name
+        setParkName(response.data.park_name)
+        console.log(response.data.games)
+        setGames(response.data.games)
       } catch (err) {
         console.error("Error:", err)
       }
@@ -24,9 +27,9 @@ const ParkGames = () => {
 
   return (
     <>
-      <h1>Games at Park {parkId}</h1>
+      <h1>Games at Park {parkName}</h1>
       <div className="card-flex">
-        {games.length > 0 ? (
+        {games && games.length > 0 ? (
           games.map((game) => (
             <div className="card" key={game._id}>
               <div className="img-wrapper">
@@ -52,3 +55,5 @@ const ParkGames = () => {
 }
 
 export default ParkGames
+
+//

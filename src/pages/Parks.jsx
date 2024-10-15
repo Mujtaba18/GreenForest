@@ -9,8 +9,8 @@ const Parks = () => {
   useEffect(() => {
     const fetchParks = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/park")
-        setParks(response.data)
+        const response = await axios.get("http://localhost:3001/parks")
+        setParks(response.data || [])
         // console.log("Response data:", response.data)
       } catch (err) {
         console.error("Error:", err)
