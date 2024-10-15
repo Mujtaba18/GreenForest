@@ -5,4 +5,40 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--secondary-bg);
+
+  color: #eee;
+  background-color: #424242;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+  max-width: 300px;
+  max-height: 380px;
+  border-radius: 4px;
+  background-color: #1b1b1b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.flex-coll {
+  text-align: center;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+a {
+  color: #eee;
+  text-decoration: none;
+}
+.card-flex {
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-width: 1250px;
 }
