@@ -2,7 +2,8 @@ import { NavLink } from "react-router-dom"
 
 const Nav = () => {
   return (
-    <header>
+    <header className="head-nav">
+      <h3>Green Forest</h3>
       <nav>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>

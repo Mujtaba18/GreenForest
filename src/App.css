@@ -4,15 +4,10 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--secondary-bg);
+  text-align: center;
 
-  color: #eee;
-  background-color: #424242;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #000000;
+  background-color: #ffffff;
 }
 
 .card {
@@ -41,4 +36,67 @@ a {
   flex-wrap: wrap;
   gap: 15px;
   max-width: 1250px;
+}
+
+.head-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+
+  background-color: #ffffff;
+  color: rgb(24, 143, 24);
+  border-bottom: 5px solid rgb(24, 143, 24);
+}
+
+.nav-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  padding-left: 1em;
+  color: rgb(24, 143, 24);
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: rgba(24, 143, 24, 0.7);
+}
+
+#home-img {
+  border-bottom: 1px solid rgb(24, 143, 24);
+}
+
+#home-title {
+  color: rgb(38, 42, 38);
+}
+
+#viewPark {
+  background-color: rgb(191, 219, 191);
+  color: rgb(38, 42, 38);
+  font-weight: 600;
+  font-size: 1em;
+  width: 12em;
+  height: 5em;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#viewPark:hover {
+  background-color: rgb(190, 204, 190);
+  color: rgb(38, 42, 38);
+}
+
+.about {
+  margin: 10px 40px;
+  color: rgb(38, 42, 38);
+  font-size: 1.2em;
+}
+
+#desc {
+  text-align: justify;
 }
