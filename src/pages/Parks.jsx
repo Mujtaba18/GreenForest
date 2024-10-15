@@ -26,7 +26,7 @@ const Parks = () => {
 
   return (
     <>
-      <h1>Parks</h1>
+      <h1 className="titles">Parks</h1>
       <div className="card-flex">
         {parks.length > 0 ? (
           parks.map((park) => (

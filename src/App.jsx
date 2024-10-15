@@ -5,6 +5,7 @@ import Nav from "./components/Nav"
 import Parks from "./pages/Parks"
 import ParkGames from "./components/ParkGames"
 import "./App.css"
+import AddPark from "./pages/AddPark"
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/parks" element={<Parks />} />
           <Route path="/parks/games/:parkId" element={<ParkGames />} />
+          <Route path="/addpark" element={<AddPark />} />
         </Routes>
       </main>
     </div>

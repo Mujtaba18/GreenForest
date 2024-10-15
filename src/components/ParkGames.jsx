@@ -6,6 +6,7 @@ const ParkGames = () => {
   const { parkId } = useParams()
   const [games, setGames] = useState([])
   const [parkName, setParkName] = useState("")
+  const [park, setPark] = useState({})
 
   useEffect(() => {
     const fetchParkGames = async () => {
@@ -17,6 +18,7 @@ const ParkGames = () => {
         setParkName(response.data.park_name)
         console.log(response.data.games)
         setGames(response.data.games)
+        setPark(response.data)
       } catch (err) {
         console.error("Error:", err)
       }
@@ -27,7 +29,15 @@ const ParkGames = () => {
 
   return (
     <>
-      <h1>Games at Park {parkName}</h1>
+      <h1>{park.park_name}</h1>
+      <div className="park-details">
+        <img src={park.park_image} alt={park.park_name} />
+        <h4>Location</h4>
+        <p>{park.park_location}</p>
+        <h4>Description</h4>
+        <p>{park.park_description}</p>
+      </div>
+      <h1>Games at {parkName}</h1>
       <div className="card-flex">
         {games && games.length > 0 ? (
           games.map((game) => (
