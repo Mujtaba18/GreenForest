@@ -100,3 +100,19 @@ nav a:hover {
 #desc {
   text-align: justify;
 }
+
+.message {
+  position: fixed;
+  top: 16%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-family: "Arial Narrow Bold", sans-serif;
+}
