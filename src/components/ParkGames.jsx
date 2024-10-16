@@ -32,7 +32,9 @@ const ParkGames = () => {
 
   // delete game
 
-  const deleteGame = async (gameId) => {
+  const deleteGame = async (e, gameId) => {
+    e.preventDefault()
+
     try {
       await axios.delete(
         `http://localhost:3001/parks/${parkId}/games/${gameId}`
@@ -58,7 +60,8 @@ const ParkGames = () => {
           games.map((game) => (
             <div className="card" key={game._id}>
               <button
-                onClick={() => deleteGame(game._id)}
+                className="delete-btn"
+                onClick={(e) => deleteGame(e, game._id)}
                 style={{ float: "right", fontWeight: "700" }}
               >
                 x
