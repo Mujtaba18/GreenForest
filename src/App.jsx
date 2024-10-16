@@ -6,6 +6,7 @@ import Parks from "./pages/Parks"
 import ParkGames from "./components/ParkGames"
 import "./App.css"
 import AddPark from "./pages/AddPark"
+import UpdatePark from "./pages/UpdatePark"
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/parks" element={<Parks />} />
           <Route path="/parks/games/:parkId" element={<ParkGames />} />
           <Route path="/addpark" element={<AddPark />} />
+          <Route path="/updatepark/:parkId" element={<UpdatePark />} />
         </Routes>
       </main>
     </div>

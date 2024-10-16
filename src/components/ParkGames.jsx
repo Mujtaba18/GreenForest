@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import axios from "axios"
 
 const ParkGames = () => {
+let navigate = useNavigate()
+
   const { parkId } = useParams()
   const [games, setGames] = useState([])
   const [parkName, setParkName] = useState("")
@@ -31,7 +33,7 @@ const ParkGames = () => {
     <>
       <h1>{park.park_name}</h1>
       <div className="park-details">
-        <img src={park.park_image} alt={park.park_name} />
+        <img src={`http://localhost:3001/uploads/${park.park_image}`} alt={park.park_name} width="400px" />
         <h4>Location</h4>
         <p>{park.park_location}</p>
         <h4>Description</h4>
@@ -60,10 +62,9 @@ const ParkGames = () => {
           <p>No games available for this park.</p>
         )}
       </div>
+      <button id="viewPark" onClick={() => navigate(`/updatepark/${park._id}`)}>Update Park</button>
     </>
   )
 }
 
 export default ParkGames
-
-//

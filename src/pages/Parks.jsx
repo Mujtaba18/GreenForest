@@ -34,7 +34,7 @@ const Parks = () => {
               <Link to={`/parks/games/${park._id}`} key={park._id}>
                 <div className="img-wrapper">
                   <img
-                    src={park.park_image}
+                    src={`http://localhost:3001/uploads/${park.park_image}`}
                     alt={park.park_name}
                     style={{ width: "200px", height: "auto" }}
                   />

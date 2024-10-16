@@ -16,21 +16,45 @@ const AddPark = () => {
   const [parkData, setParkData] = useState(initialParkState)
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-
-    try {
-      const response = await axios.post("http://localhost:3001/parks", parkData)
-      console.log("Park created successfully:", response.data)
-    } catch (error) {
-      console.error("Error creating park:", error)
+    event.preventDefault();
+  
+    const formData = new FormData();
+  
+    // Add text fields to formData
+    for (const key in parkData) {
+      if (key === "park_image") {
+        formData.append("park_image", parkData[key]);
+      } else {
+        formData.append(key, parkData[key]);
+      }
     }
-    navigate("/parks")
-  }
+  
+    try {
+      const response = await axios.post("http://localhost:3001/parks", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log("Park created successfully:", response.data);
+      setParkData(initialParkState);
+      navigate("/parks");
+    } catch (error) {
+      console.error("Error creating park:", error.response ? error.response.data : error.message);
+    }
+  };
+  
 
   const handleChange = (event) => {
     setParkData({
       ...parkData,
       [event.target.name]: event.target.value,
+    })
+  }
+
+  const handleImageChange = (event) => {
+    setParkData({
+      ...parkData,
+      park_image: event.target.files[0],
     })
   }
 
@@ -76,17 +100,16 @@ const AddPark = () => {
         <div className="form-group">
           <label htmlFor="park_image">Park Image URL:</label>
           <input
-            type="text"
+            type="file"
             className="form-control"
             id="park_image"
             name="park_image"
-            value={parkData.park_image}
-            onChange={handleChange}
+            onChange={handleImageChange}
             required
           />
         </div>
         <button type="submit" className="formButton">
-          Create Park
+          Add Park
         </button>
       </form>
     </div>
