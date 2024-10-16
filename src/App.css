@@ -12,7 +12,6 @@ body {
 
 .card {
   max-width: 300px;
-  max-height: 380px;
   border: 2px solid rgb(38, 42, 38);
   border-radius: 4px;
   background-color: rgb(191, 219, 191);
@@ -23,6 +22,11 @@ body {
 
 .card a {
   color: rgb(38, 42, 38);
+}
+
+.card img {
+  border: 2px solid rgb(38, 42, 38);
+  border-radius: 4px;
 }
 
 .flex-col {
@@ -99,13 +103,24 @@ nav a:hover {
 }
 
 .about {
-  margin: 10px 40px;
+  margin: 10px 200px;
   color: rgb(38, 42, 38);
   font-size: 1.2em;
 }
 
 #desc {
   text-align: justify;
+  margin-bottom: 80px;
+}
+
+
+.park-details {
+  padding-bottom: 10px;
+}
+
+.park-details img {
+  border: 2px solid rgb(38, 42, 38);
+  border-radius: 4px;
 }
 
 .message {

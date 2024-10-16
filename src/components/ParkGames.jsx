@@ -67,7 +67,6 @@ let navigate = useNavigate()
       </div>
       <h1>Games at {parkName}</h1>
       {message && <div className="message">{message}</div>}
-      <h1>Games at Park {parkName}</h1>
       <div className="card-flex">
         {games && games.length > 0 ? (
           games.map((game) => (
@@ -81,7 +80,8 @@ let navigate = useNavigate()
               </button>
               <div className="img-wrapper">
                 <img
-                  src={`http://localhost:3001/uploads/${game.game_image}`}
+                  // src={`http://localhost:3001/uploads/${game.game_image}`}
+                  src={`${game.game_image}`}
                   alt={game.game_name}
                   style={{ width: "200px", height: "auto" }}
                 />
