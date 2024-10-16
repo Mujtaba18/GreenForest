@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from 'react-router-dom'
 
 const Nav = () => {
   return (
@@ -8,6 +8,7 @@ const Nav = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/parks">Parks</NavLink>
+        <NavLink to="/Create">Add Game</NavLink>
       </nav>
     </header>
   )
