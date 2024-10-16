@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UpdatePark = () => {
+let navigate = useNavigate()
+
   const { parkId } = useParams();
   const initialParkState = {
     park_name: "",
@@ -72,8 +75,9 @@ const UpdatePark = () => {
     console.log("Submitting park data:", parkData);
     
     try {
-      const response = await axios.post(`http://localhost:3001/parks/${parkId}`, parkData); // Changed to PUT
+      const response = await axios.put(`http://localhost:3001/parks/${parkId}`, parkData); // Changed to PUT
       console.log("Park updated successfully:", response.data);
+      navigate(`/parks/games/${parkId}`)
     } catch (error) {
       console.error("Error updating park:", error.response ? error.response.data : error.message);
     }
