@@ -46,7 +46,7 @@ let navigate = useNavigate()
             <div className="card" key={game._id}>
               <div className="img-wrapper">
                 <img
-                  src={game.game_image}
+                  src={`http://localhost:3001/uploads/${game.game_image}`}
                   alt={game.game_name}
                   style={{ width: "200px", height: "auto" }}
                 />

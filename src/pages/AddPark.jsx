@@ -60,7 +60,8 @@ const AddPark = () => {
 
   return (
     <div>
-      <h2 className="titles">Add a New Park</h2>
+    <h2 className="titles">Add a New Park</h2>
+      <div className="addpark">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="park_name">Park Name:</label>
@@ -112,6 +113,7 @@ const AddPark = () => {
           Add Park
         </button>
       </form>
+      </div>
     </div>
   )
 }
