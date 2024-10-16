@@ -108,59 +108,24 @@ nav a:hover {
   text-align: justify;
 }
 
-.addpark, .updatepark {
+.message {
+  position: fixed;
+  top: 16%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  font-family: "Arial Narrow Bold", sans-serif;
 }
-
-form {
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(191, 219, 191);
-  border: 2px solid rgb(38, 42, 38);
-  border-radius: 4px;
-  margin: 20px;
-  padding: 15px 0;
+.card:hover .delete-btn {
+  display: block;
 }
-
-form button {
-  background-color: rgb(233, 237, 233);
-  color: rgb(38, 42, 38);
-  font-weight: 600;
-  font-size: 1em;
-  width: 7em;
-  height: 2em;
-  cursor: pointer;
-  border-radius: 4px;
-  margin: 20px 0;
+.delete-btn {
+  display: none;
 }
-
-form button:hover {
-  background-color: rgb(190, 204, 190);
-  color: rgb(38, 42, 38);
-}
-
-form label {
-  margin: 10px 0;
-}
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-form input, textarea {
-  width: 100%;
-  background-color: #eee;
-  height: 20px;
-  margin: 10px 0;
-
-  border: 1px solid rgb(38, 42, 38);
-}
-
-
-
-
